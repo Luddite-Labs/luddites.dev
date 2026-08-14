@@ -1,0 +1,93 @@
+:root {
+  /* Surfaces */
+  --ll-ink: #12141a;
+  --ll-ink-soft: #1c1f27;
+  --ll-paper: #e9eaec;
+  --ll-paper-deep: #dfe1e4;
+  --ll-steel: #6b7280;
+  --ll-steel-bright: #9aa1ac;
+  --ll-rust: #c45c26;
+  --ll-rust-deep: #9a451c;
+  --ll-blueprint: #3d5a73;
+  --ll-rule: color-mix(in srgb, var(--ll-ink) 18%, transparent);
+  --ll-grain: color-mix(in srgb, var(--ll-ink) 6%, transparent);
+
+  /* Semantic aliases for shadcn-style primitives */
+  --background: var(--ll-paper);
+  --foreground: var(--ll-ink);
+  --primary: var(--ll-ink);
+  --primary-foreground: var(--ll-paper);
+  --secondary: var(--ll-paper-deep);
+  --secondary-foreground: var(--ll-ink);
+  --muted: var(--ll-paper-deep);
+  --muted-foreground: var(--ll-steel);
+  --accent: var(--ll-rust);
+  --accent-foreground: var(--ll-paper);
+  --destructive: #9f2d2d;
+  --border: var(--ll-rule);
+  --input: var(--ll-rule);
+  --ring: var(--ll-rust);
+  --card: var(--ll-paper);
+  --card-foreground: var(--ll-ink);
+
+  /* Type */
+  --ll-font-display: 'Syne', sans-serif;
+  --ll-font-body: 'IBM Plex Sans', sans-serif;
+  --ll-font-mono: 'IBM Plex Mono', monospace;
+
+  --ll-text-xs: 0.75rem;
+  --ll-text-sm: 0.875rem;
+  --ll-text-base: 1.0625rem;
+  --ll-text-lg: 1.25rem;
+  --ll-text-xl: 1.5rem;
+  --ll-text-2xl: clamp(1.75rem, 2.4vw, 2.25rem);
+  --ll-text-3xl: clamp(2.25rem, 4vw, 3.25rem);
+  --ll-text-hero: clamp(2.75rem, 8vw, 5.5rem);
+
+  --ll-leading-tight: 1.05;
+  --ll-leading-snug: 1.25;
+  --ll-leading-body: 1.65;
+
+  /* Space */
+  --ll-space-1: 0.25rem;
+  --ll-space-2: 0.5rem;
+  --ll-space-3: 0.75rem;
+  --ll-space-4: 1rem;
+  --ll-space-5: 1.5rem;
+  --ll-space-6: 2rem;
+  --ll-space-7: 3rem;
+  --ll-space-8: 4.5rem;
+  --ll-space-9: 7rem;
+
+  --ll-page-x: clamp(1.25rem, 4vw, 3.5rem);
+  --ll-page-max: 72rem;
+  --ll-measure: 38rem;
+
+  /* Shape / motion */
+  --ll-radius-sm: 0.125rem;
+  --ll-radius: 0.25rem;
+  --ll-radius-lg: 0.5rem;
+
+  --ll-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ll-duration-fast: 160ms;
+  --ll-duration: 420ms;
+  --ll-duration-slow: 780ms;
+
+  --ll-header-h: 4.25rem;
+  --radius: var(--ll-radius);
+}
+
+@theme inline {
+  --color-ll-ink: var(--ll-ink);
+  --color-ll-ink-soft: var(--ll-ink-soft);
+  --color-ll-paper: var(--ll-paper);
+  --color-ll-paper-deep: var(--ll-paper-deep);
+  --color-ll-steel: var(--ll-steel);
+  --color-ll-steel-bright: var(--ll-steel-bright);
+  --color-ll-rust: var(--ll-rust);
+  --color-ll-rust-deep: var(--ll-rust-deep);
+  --color-ll-blueprint: var(--ll-blueprint);
+  --font-ll-display: var(--ll-font-display);
+  --font-ll-body: var(--ll-font-body);
+  --font-ll-mono: var(--ll-font-mono);
+}

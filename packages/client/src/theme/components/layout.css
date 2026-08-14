@@ -1,0 +1,113 @@
+@layer components {
+  .ll-page {
+    @apply flex min-h-screen flex-col;
+  }
+
+  .ll-page__main {
+    @apply flex-1;
+  }
+
+  .ll-skip-link {
+    @apply absolute left-4 z-50 -translate-y-[150%] bg-ll-ink text-ll-paper px-4 py-2 font-ll-mono text-sm;
+    top: var(--ll-space-4);
+    transition: transform var(--ll-duration-fast) var(--ll-ease);
+  }
+
+  .ll-skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  .ll-header {
+    @apply sticky top-0 z-40 border-b;
+    height: var(--ll-header-h);
+    border-color: var(--ll-rule);
+    background: color-mix(in srgb, var(--ll-paper) 92%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .ll-header__inner {
+    @apply flex h-full items-center justify-between gap-6;
+  }
+
+  .ll-header__brand {
+    @apply inline-flex items-center gap-3 no-underline;
+  }
+
+  .ll-header__nav {
+    @apply hidden items-center gap-1 md:flex;
+  }
+
+  .ll-header__actions {
+    @apply flex items-center gap-2;
+  }
+
+  .ll-footer {
+    @apply border-t;
+    border-color: var(--ll-rule);
+    background: var(--ll-ink);
+    color: var(--ll-paper);
+    padding-block: var(--ll-space-7);
+  }
+
+  .ll-footer__inner {
+    @apply grid gap-8 md:grid-cols-[1.4fr_1fr_1fr];
+  }
+
+  .ll-footer__brand {
+    @apply flex flex-col gap-3;
+  }
+
+  .ll-footer__title {
+    @apply font-ll-display text-2xl font-bold tracking-tight;
+  }
+
+  .ll-footer__copy {
+    @apply max-w-sm text-sm;
+    color: color-mix(in srgb, var(--ll-paper) 70%, transparent);
+  }
+
+  .ll-footer__heading {
+    @apply mb-3 font-ll-mono text-xs uppercase tracking-[0.18em];
+    color: color-mix(in srgb, var(--ll-paper) 55%, transparent);
+  }
+
+  .ll-footer__list {
+    @apply m-0 flex list-none flex-col gap-2 p-0;
+  }
+
+  .ll-footer__link {
+    @apply no-underline transition-opacity;
+    color: var(--ll-paper);
+  }
+
+  .ll-footer__link:hover {
+    @apply opacity-70;
+  }
+
+  .ll-footer__meta {
+    @apply mt-10 flex flex-wrap items-center justify-between gap-3 border-t pt-5 font-ll-mono text-xs;
+    border-color: color-mix(in srgb, var(--ll-paper) 14%, transparent);
+    color: color-mix(in srgb, var(--ll-paper) 55%, transparent);
+  }
+
+  .ll-header__cta-desktop {
+    @apply hidden md:inline-flex;
+  }
+
+  .ll-header__menu-trigger {
+    @apply md:hidden;
+  }
+
+  .ll-footer .ll-brand-mark {
+    background: var(--ll-paper);
+    color: var(--ll-ink);
+  }
+
+  .ll-footer .ll-brand-mark__rule {
+    background: var(--ll-rust);
+  }
+
+  .ll-nav-menu__list {
+    @apply m-0 flex list-none items-center gap-1 p-0;
+  }
+}

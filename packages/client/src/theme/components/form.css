@@ -1,0 +1,60 @@
+@layer components {
+  .ll-form {
+    @apply flex flex-col gap-5;
+  }
+
+  .ll-form-field {
+    @apply flex flex-col gap-2;
+  }
+
+  .ll-label {
+    @apply font-ll-mono text-xs uppercase tracking-[0.16em];
+    color: var(--ll-steel);
+  }
+
+  .ll-input,
+  .ll-textarea {
+    @apply w-full border bg-transparent px-3 py-3 outline-none transition-colors;
+    border-color: color-mix(in srgb, var(--ll-ink) 22%, transparent);
+    border-radius: var(--ll-radius-sm);
+    color: var(--ll-ink);
+    transition-duration: var(--ll-duration-fast);
+  }
+
+  .ll-input:focus,
+  .ll-textarea:focus {
+    border-color: var(--ll-ink);
+    box-shadow: 0 0 0 1px var(--ll-ink);
+  }
+
+  .ll-input[aria-invalid='true'],
+  .ll-textarea[aria-invalid='true'] {
+    border-color: var(--destructive);
+  }
+
+  .ll-textarea {
+    @apply min-h-36 resize-y;
+  }
+
+  .ll-form-error {
+    @apply font-ll-mono text-xs;
+    color: var(--destructive);
+  }
+
+  .ll-form-hint {
+    @apply text-sm;
+    color: var(--ll-steel);
+  }
+
+  .ll-form-status {
+    @apply border px-4 py-3 text-sm;
+    border-radius: var(--ll-radius-sm);
+    border-color: color-mix(in srgb, var(--ll-blueprint) 35%, transparent);
+    background: color-mix(in srgb, var(--ll-blueprint) 8%, transparent);
+  }
+
+  .ll-form-status--success {
+    border-color: color-mix(in srgb, var(--ll-rust) 40%, transparent);
+    background: color-mix(in srgb, var(--ll-rust) 10%, transparent);
+  }
+}

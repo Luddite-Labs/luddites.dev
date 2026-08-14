@@ -1,0 +1,15 @@
+{
+  "name": "luddites.dev",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "dev": "pnpm --filter luddite-labs-client dev",
+    "build": "pnpm --filter luddite-labs-client build",
+    "lint": "pnpm --filter luddite-labs-client lint",
+    "preview": "pnpm --filter luddite-labs-client preview"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

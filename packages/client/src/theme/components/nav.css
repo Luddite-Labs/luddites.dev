@@ -1,0 +1,37 @@
+@layer components {
+  .ll-nav-link {
+    @apply relative inline-flex items-center px-3 py-2 font-ll-mono text-xs uppercase tracking-[0.16em] no-underline transition-colors;
+    color: var(--ll-steel);
+  }
+
+  .ll-nav-link:hover,
+  .ll-nav-link--active {
+    color: var(--ll-ink);
+  }
+
+  .ll-nav-link--active::after {
+    content: '';
+    @apply absolute bottom-1 left-3 right-3 h-px;
+    background: var(--ll-rust);
+  }
+
+  .ll-nav-link--footer {
+    @apply px-0 py-0 normal-case tracking-normal;
+    color: var(--ll-paper);
+    font-family: var(--ll-font-body);
+    font-size: var(--ll-text-sm);
+  }
+
+  .ll-nav-link--footer::after {
+    display: none;
+  }
+
+  .ll-mobile-nav {
+    @apply flex flex-col gap-1 p-2;
+  }
+
+  .ll-mobile-nav__link {
+    @apply block border-b px-3 py-4 font-ll-display text-2xl font-bold no-underline;
+    border-color: var(--ll-rule);
+  }
+}

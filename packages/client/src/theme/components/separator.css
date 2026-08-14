@@ -1,0 +1,10 @@
+@layer components {
+  .ll-separator {
+    @apply h-px w-full shrink-0;
+    background: var(--ll-rule);
+  }
+
+  .ll-separator--vertical {
+    @apply h-full w-px;
+  }
+}

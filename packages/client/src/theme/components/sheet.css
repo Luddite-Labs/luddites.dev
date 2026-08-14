@@ -1,0 +1,25 @@
+@layer components {
+  .ll-sheet-overlay {
+    @apply fixed inset-0 z-50;
+    background: color-mix(in srgb, var(--ll-ink) 45%, transparent);
+  }
+
+  .ll-sheet {
+    @apply fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col border-l;
+    border-color: var(--ll-rule);
+    background: var(--ll-paper);
+    padding: var(--ll-space-5);
+  }
+
+  .ll-sheet__header {
+    @apply mb-6 flex items-center justify-between gap-3;
+  }
+
+  .ll-sheet__title {
+    @apply font-ll-display text-xl font-bold;
+  }
+
+  .ll-sheet__body {
+    @apply flex-1 overflow-y-auto;
+  }
+}
