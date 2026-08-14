@@ -27,13 +27,13 @@ export const routes: RouteRecord[] = [
   {
     path: '/',
     element: (
-      <Providers>
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <Providers>
           <Suspense fallback={null}>
             <PageShell />
           </Suspense>
-        </ErrorBoundary>
-      </Providers>
+        </Providers>
+      </ErrorBoundary>
     ),
     children: withStaticPaths(generatedRoutes as RouteRecord[]),
   },
