@@ -19,13 +19,16 @@ const contactSlice = createSlice({
       state.lastSubmittedAt = action.payload
       state.statusMessage = contact.form.successMessage
     },
+    markFailed(state) {
+      state.statusMessage = contact.form.errorMessage
+    },
     clearStatus(state) {
       state.statusMessage = null
     },
   },
 })
 
-export const { markSubmitted, clearStatus } = contactSlice.actions
+export const { markSubmitted, markFailed, clearStatus } = contactSlice.actions
 export const selectContactStatus = (state: { contact: ContactUiState }) =>
   state.contact.statusMessage
 export default contactSlice.reducer

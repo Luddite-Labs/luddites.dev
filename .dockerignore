@@ -1,0 +1,23 @@
+# Dependencies & builds
+node_modules
+**/node_modules
+dist
+**/dist
+.vite-react-ssg-temp
+**/.vite-react-ssg-temp
+
+# Git / CI / editor
+.git
+.github
+.vscode
+.idea
+
+# Env / local
+.env
+.env.*
+!.env.example
+*.local
+
+# Misc
+**/coverage
+**/.DS_Store

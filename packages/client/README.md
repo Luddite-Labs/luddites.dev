@@ -1,32 +1,52 @@
-# React + TypeScript + Vite
+# luddite-labs-client
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Marketing site for [Luddite Labs](https://ludditelabs.dev) — React 19, Vite, Tailwind CSS 4, and static generation via `vite-react-ssg`.
 
-Currently, two official plugins are available:
+Run commands from the monorepo root (`pnpm dev`, `pnpm build`, …) or from this package.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- **UI** — React 19, React Router, Tailwind, Radix primitives, Framer Motion
+- **State** — Redux Toolkit (UI, contact, work)
+- **Forms** — react-hook-form + Yup
+- **Content** — static JSON under `src/content/`
+- **SSG** — `vite-react-ssg` + `vite-plugin-pages` (file-based routes in `src/pages/`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+pnpm dev       # Vite dev server
+pnpm build     # typecheck + SSG into dist/
+pnpm preview   # preview production build
+pnpm lint      # oxlint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Environment
+
+Copy `.env.example` → `.env`:
+
+| Variable | Purpose |
+|----------|---------|
+| `VITE_SITE_URL` | Canonical origin (OG tags, sitemap, robots) |
+| `VITE_WEB3FORMS_ACCESS_KEY` | Contact form → email via [Web3Forms](https://web3forms.com) (no backend) |
+| `VITE_CONTACT_ENDPOINT` | Alternative: full form POST URL (e.g. Formspree) |
+| `VITE_API_BASE_URL` | Alternative: custom API origin (`POST /contact`) |
+
+Contact submit priority: Web3Forms → contact endpoint → API base → local fake stub.
+
+## Layout
+
+```
+src/
+  app/           # routes, store, providers
+  components/    # layout, sections, UI, SEO (PageMeta)
+  content/       # site copy + work cases (JSON)
+  features/      # contact, work, ui slices / API
+  pages/         # file-based routes (/, /work, /about, /contact, …)
+  lib/           # env, assets, constants
+public/          # brand assets, robots.txt; sitemap generated on build
+```
+
+## SEO
+
+`PageMeta` sets title, description, Open Graph, Twitter, and canonical URLs per page. Build generates `public/sitemap.xml` and refreshes `robots.txt` from `VITE_SITE_URL` and work case slugs.

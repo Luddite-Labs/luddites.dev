@@ -6,4 +6,6 @@ export const ASSETS = {
   logo: '/brand/logo.png',
   /** Main logo mark (dark surfaces) */
   logoDark: '/brand/logo-dark.png',
+  /** Open Graph / Twitter share image (replace with a dedicated 1200×630 asset when ready) */
+  ogImage: '/brand/logo.png',
 } as const

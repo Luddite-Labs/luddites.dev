@@ -146,6 +146,7 @@ export type ContactContent = {
     submitLabel: string
     pendingLabel: string
     successMessage: string
+    errorMessage: string
     fields: {
       name: { label: string; placeholder: string }
       email: { label: string; placeholder: string }

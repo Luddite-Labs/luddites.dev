@@ -23,6 +23,7 @@
     "submitLabel": "Send message",
     "pendingLabel": "Sending…",
     "successMessage": "Message received. We will reply within two business days.",
+    "errorMessage": "Something went wrong sending that. Try again, or email us directly.",
     "fields": {
       "name": { "label": "Name", "placeholder": "Priya Sharma" },
       "email": { "label": "Email", "placeholder": "priya@example.in" },

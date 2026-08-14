@@ -11,6 +11,7 @@ import { Form } from '@/components/ui/form'
 import { contact } from '@/content'
 import { useSubmitContactMutation } from '@/features/contact/contactApi'
 import {
+  markFailed,
   markSubmitted,
   selectContactStatus,
 } from '@/features/contact/contactSlice'
@@ -36,7 +37,9 @@ export function ContactForm() {
     if ('data' in result) {
       dispatch(markSubmitted(new Date().toISOString()))
       form.reset()
+      return
     }
+    dispatch(markFailed())
   })
 
   return (

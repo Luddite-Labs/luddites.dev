@@ -1,4 +1,4 @@
-import { Head } from 'vite-react-ssg'
+import { PageMeta } from '@/components/seo/PageMeta'
 import { HomeHero } from '@/components/sections/home/HomeHero'
 import { HomePromise } from '@/components/sections/home/HomePromise'
 import { HomeCapabilities } from '@/components/sections/home/HomeCapabilities'
@@ -8,13 +8,11 @@ import { HomeCta } from '@/components/sections/home/HomeCta'
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Luddite Labs</title>
-        <meta
-          name="description"
-          content="Luddite Labs. Clean software. Expertise. Remote across India."
-        />
-      </Head>
+      <PageMeta
+        title="Luddite Labs"
+        description="Luddite Labs. Clean software. Expertise. Remote across India."
+        path="/"
+      />
       <HomeHero />
       <HomePromise />
       <HomeCapabilities />
