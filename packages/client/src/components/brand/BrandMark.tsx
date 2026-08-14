@@ -6,9 +6,9 @@ export function BrandMark({ className }: { className?: string }) {
     <img
       src={ASSETS.logo}
       alt=""
-      width={32}
-      height={32}
-      className={cn('size-8 rounded-md', className)}
+      width={128}
+      height={128}
+      className={cn('size-8', className)}
       aria-hidden="true"
     />
   )

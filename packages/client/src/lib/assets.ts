@@ -1,7 +1,7 @@
 /** Static files in `public/` are served from the site root. */
 export const ASSETS = {
-  /** Browser tab icon — replace `public/favicon.svg` */
-  favicon: '/favicon.svg',
-  /** Main logo mark used in header/footer — replace `public/brand/logo.svg` */
-  logo: '/brand/logo.svg',
+  /** Browser tab icon */
+  favicon: '/brand/logo.png',
+  /** Main logo mark (128×128) used in header/footer */
+  logo: '/brand/logo.png',
 } as const
