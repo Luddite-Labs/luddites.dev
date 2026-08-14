@@ -1,4 +1,5 @@
 import {
+  Component,
   createContext,
   lazy,
   Suspense,
@@ -7,6 +8,7 @@ import {
   useEffect,
   useMemo,
   useState,
+  type ComponentType,
   type ReactNode,
 } from 'react'
 import { createPortal } from 'react-dom'
@@ -16,7 +18,37 @@ import {
   getCelebratePalette,
 } from '@/lib/starBurstLottie'
 
-const Lottie = lazy(() => import('lottie-react'))
+type LottieProps = {
+  animationData: object
+  loop?: boolean
+  autoplay?: boolean
+  onComplete?: () => void
+  className?: string
+}
+
+function resolveLottieExport(mod: {
+  default?: unknown
+}): ComponentType<LottieProps> {
+  const exported = mod.default
+  if (typeof exported === 'function') {
+    return exported as ComponentType<LottieProps>
+  }
+  if (
+    exported &&
+    typeof exported === 'object' &&
+    'default' in exported &&
+    typeof (exported as { default: unknown }).default === 'function'
+  ) {
+    return (exported as { default: ComponentType<LottieProps> }).default
+  }
+  throw new Error('Unable to resolve lottie-react component export')
+}
+
+const Lottie = lazy(() =>
+  import('lottie-react').then((mod) => ({
+    default: resolveLottieExport(mod),
+  })),
+)
 
 type Burst = {
   id: string
@@ -34,6 +66,26 @@ type CelebrateContextValue = {
 
 const CelebrateContext = createContext<CelebrateContextValue | null>(null)
 
+class BurstErrorBoundary extends Component<
+  { children: ReactNode; onError: () => void },
+  { failed: boolean }
+> {
+  state = { failed: false }
+
+  static getDerivedStateFromError() {
+    return { failed: true }
+  }
+
+  componentDidCatch() {
+    this.props.onError()
+  }
+
+  render() {
+    if (this.state.failed) return null
+    return this.props.children
+  }
+}
+
 function BurstPlayer({
   burst,
   onDone,
@@ -46,15 +98,17 @@ function BurstPlayer({
       className="absolute size-56 -translate-x-1/2 -translate-y-1/2"
       style={{ left: burst.x, top: burst.y }}
     >
-      <Suspense fallback={null}>
-        <Lottie
-          animationData={burst.animationData}
-          loop={false}
-          autoplay
-          onComplete={() => onDone(burst.id)}
-          className="size-full"
-        />
-      </Suspense>
+      <BurstErrorBoundary onError={() => onDone(burst.id)}>
+        <Suspense fallback={null}>
+          <Lottie
+            animationData={burst.animationData}
+            loop={false}
+            autoplay
+            onComplete={() => onDone(burst.id)}
+            className="size-full"
+          />
+        </Suspense>
+      </BurstErrorBoundary>
     </div>
   )
 }
