@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { enterTo, revealFrom, springReveal } from '@/components/motion/springs'
 
 export function Reveal({
   children,
@@ -11,11 +12,11 @@ export function Reveal({
   const reduce = useReducedMotion()
   return (
     <motion.div
-      className={className ? `ll-motion-reveal ${className}` : 'll-motion-reveal'}
-      initial={reduce ? false : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      className={className}
+      initial={reduce ? false : revealFrom}
+      whileInView={enterTo}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: reduce ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={reduce ? { duration: 0 } : springReveal}
     >
       {children}
     </motion.div>

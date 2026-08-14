@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { enterFrom, enterTo, springEnter } from '@/components/motion/springs'
 
 export function FadeIn({
   children,
@@ -13,10 +14,14 @@ export function FadeIn({
   const reduce = useReducedMotion()
   return (
     <motion.div
-      className={className ? `ll-motion-fade ${className}` : 'll-motion-fade'}
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: reduce ? 0 : 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      className={className}
+      initial={reduce ? false : enterFrom}
+      animate={enterTo}
+      transition={
+        reduce
+          ? { duration: 0 }
+          : { ...springEnter, delay }
+      }
     >
       {children}
     </motion.div>

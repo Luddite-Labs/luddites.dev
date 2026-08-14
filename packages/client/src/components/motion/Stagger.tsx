@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { enterTo, revealFrom, springReveal } from '@/components/motion/springs'
 
 export function Stagger({
   children,
@@ -19,7 +20,8 @@ export function Stagger({
         hidden: {},
         show: {
           transition: {
-            staggerChildren: reduce ? 0 : 0.1,
+            staggerChildren: reduce ? 0 : 0.08,
+            delayChildren: reduce ? 0 : 0.04,
           },
         },
       }}
@@ -41,11 +43,10 @@ export function StaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+        hidden: reduce ? enterTo : revealFrom,
         show: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: reduce ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] },
+          ...enterTo,
+          transition: reduce ? { duration: 0 } : springReveal,
         },
       }}
     >
