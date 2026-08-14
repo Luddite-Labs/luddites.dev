@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { motion, useReducedMotion } from 'framer-motion'
+import { useCelebrate } from '@/components/celebrate/CelebrateProvider'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
@@ -35,33 +36,51 @@ const buttonVariants = cva(
   },
 )
 
-const springTap = {
+const springPress = {
   type: 'spring' as const,
-  stiffness: 520,
-  damping: 18,
-  mass: 0.6,
+  stiffness: 480,
+  damping: 16,
+  mass: 0.55,
 }
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  /** Play a theme-colored star burst on click (for primary CTAs). */
+  celebrate?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, variant, size, asChild = false, type = 'button', ...props },
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      celebrate = false,
+      type = 'button',
+      onClick,
+      ...props
+    },
     ref,
   ) => {
     const reduce = useReducedMotion()
+    const { celebrateFromEvent } = useCelebrate()
     const classes = cn(buttonVariants({ variant, size, className }))
     const Comp = asChild ? Slot : 'button'
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+      if (celebrate) celebrateFromEvent(event)
+      onClick?.(event as React.MouseEvent<HTMLButtonElement>)
+    }
 
     const button = (
       <Comp
         ref={ref}
         type={asChild ? undefined : type}
         className={classes}
+        onClick={handleClick}
         {...props}
       />
     )
@@ -70,10 +89,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <motion.span
-        className="inline-flex"
-        whileHover={{ scale: 1.04 }}
-        whileTap={{ scale: 0.96 }}
-        transition={springTap}
+        className="inline-flex origin-center will-change-transform"
+        whileHover={{ y: -3, rotate: -2.5 }}
+        whileTap={{ y: 2, rotate: 1.5, scaleX: 0.97, scaleY: 1.05 }}
+        transition={springPress}
       >
         {button}
       </motion.span>

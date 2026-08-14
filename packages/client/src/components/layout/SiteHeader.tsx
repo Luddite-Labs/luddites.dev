@@ -21,7 +21,7 @@ export function SiteHeader() {
         </nav>
         <div className="ml-auto flex items-center gap-2 md:ml-0">
           <ThemeToggle />
-          <Button asChild size="sm" className="hidden md:inline-flex">
+          <Button asChild size="sm" celebrate className="hidden md:inline-flex">
             <Link to={home.hero.primaryCta.to}>{home.hero.primaryCta.label}</Link>
           </Button>
           <MobileNav />

@@ -16,7 +16,7 @@ export function HomeCta() {
           lede={cta.lede}
         />
         <CallToAction className="mt-8">
-          <Button asChild size="lg">
+          <Button asChild size="lg" celebrate>
             <Link to={cta.primaryCta.to}>{cta.primaryCta.label}</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
