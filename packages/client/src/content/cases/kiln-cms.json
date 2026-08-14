@@ -1,10 +1,10 @@
 {
   "slug": "kiln-cms",
   "title": "Kiln CMS",
-  "client": "Studio Marrow",
+  "client": "Studio Marrow, Guwahati",
   "year": "2023",
   "summary": "A content system that treats editors as craftspeople, not form fillers.",
-  "problem": "Marketing needed structured pages without surrendering typographic control.",
+  "problem": "Marketing teams in Guwahati and Shillong needed structured pages without surrendering typographic control.",
   "approach": "Composable blocks with guardrails—freedom where it matters, constraints where it does not.",
   "outcome": "Publishing cadence doubled without hiring more producers.",
   "stack": ["Next-ready API", "React", "SQLite", "S3"]

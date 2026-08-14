@@ -4,7 +4,7 @@ import type { Transition } from 'framer-motion'
 export const springEnter: Transition = {
   type: 'spring',
   stiffness: 320,
-  damping: 22,
+  damping: 24,
   mass: 0.85,
 }
 
@@ -12,7 +12,7 @@ export const springEnter: Transition = {
 export const springReveal: Transition = {
   type: 'spring',
   stiffness: 380,
-  damping: 18,
+  damping: 20,
   mass: 0.75,
 }
 
@@ -20,24 +20,25 @@ export const springReveal: Transition = {
 export const springPage: Transition = {
   type: 'spring',
   stiffness: 420,
-  damping: 28,
+  damping: 30,
   mass: 0.7,
 }
 
+/**
+ * Transform-only motion — never animate opacity.
+ * Opacity 0 on hydrate is what caused the flash/reappear.
+ */
 export const enterFrom = {
-  opacity: 0,
-  y: 28,
-  scale: 0.96,
+  y: 20,
+  scale: 0.98,
 } as const
 
 export const enterTo = {
-  opacity: 1,
   y: 0,
   scale: 1,
 } as const
 
 export const revealFrom = {
-  opacity: 0,
-  y: 36,
-  scale: 0.94,
+  y: 28,
+  scale: 0.98,
 } as const

@@ -9,7 +9,7 @@
     "title": "Craft over cadence theater",
     "paragraphs": [
       "Luddite Labs started as a refusal: refuse bloated stacks, refuse roadmap theater, refuse interfaces that treat users like traffic.",
-      "Today we partner with product and ops teams who want software that feels considered—measured, maintainable, and a little bit proud of its joints."
+      "Today we partner with product and ops teams across India—from Bengaluru and Hyderabad to Guwahati and Kochi—who want software that feels considered."
     ]
   },
   "principles": {
@@ -37,22 +37,22 @@
   "team": {
     "eyebrow": "People",
     "title": "The crew",
-    "lede": "A tight group. We stay small on purpose.",
+    "lede": "A tight group across India. We stay small on purpose.",
     "members": [
       {
-        "name": "Ada Voss",
+        "name": "Ananya Iyer",
         "role": "Product engineering",
-        "bio": "Shapes product systems with a bias toward clarity and durable data models."
+        "bio": "Shapes product systems with a bias toward clarity and durable data models. Based in Chennai."
       },
       {
-        "name": "Jonah Reed",
+        "name": "Kabir Singh",
         "role": "Platform",
-        "bio": "Designs APIs and pipelines that stay calm when traffic does not."
+        "bio": "Designs APIs and pipelines that stay calm when traffic does not. Works out of Delhi NCR."
       },
       {
-        "name": "Mira Sol",
+        "name": "Meren Ao",
         "role": "Interface craft",
-        "bio": "Builds interfaces that feel mechanical in the best way—precise, quiet, useful."
+        "bio": "Builds interfaces that feel precise, quiet, and useful. Roots in Kohima, studio days in Bengaluru."
       }
     ]
   }

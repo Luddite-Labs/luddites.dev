@@ -16,7 +16,7 @@
     {
       "label": "Engagements",
       "type": "text",
-      "body": "Product builds, platform APIs, and operational tools. Typical projects run 6–16 weeks."
+      "body": "Product builds, platform APIs, and operational tools across India. Typical projects run 6–16 weeks."
     }
   ],
   "form": {
@@ -24,8 +24,8 @@
     "pendingLabel": "Sending…",
     "successMessage": "Message received. We will reply within two business days.",
     "fields": {
-      "name": { "label": "Name", "placeholder": "Ada Voss" },
-      "email": { "label": "Email", "placeholder": "ada@example.com" },
+      "name": { "label": "Name", "placeholder": "Priya Sharma" },
+      "email": { "label": "Email", "placeholder": "priya@example.in" },
       "company": { "label": "Company", "placeholder": "Optional" },
       "message": {
         "label": "Project notes",

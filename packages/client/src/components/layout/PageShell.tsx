@@ -1,10 +1,16 @@
+import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { SkipLink } from '@/components/layout/SkipLink'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { PageTransition } from '@/components/motion/PageTransition'
+import { armEnterMotionAfterHydrate } from '@/hooks/useSkipEnterOnHydrate'
 
 export function PageShell() {
+  useEffect(() => {
+    armEnterMotionAfterHydrate()
+  }, [])
+
   return (
     <div className="flex min-h-svh flex-col">
       <SkipLink />
