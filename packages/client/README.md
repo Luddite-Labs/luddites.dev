@@ -1,6 +1,6 @@
 # luddite-labs-client
 
-Marketing site for [Luddite Labs](https://ludditelabs.dev) — React 19, Vite, Tailwind CSS 4, and static generation via `vite-react-ssg`.
+Marketing site for [Luddite Labs](https://luddites.dev) — React 19, Vite, Tailwind CSS 4, and static generation via `vite-react-ssg`.
 
 Run commands from the monorepo root (`pnpm dev`, `pnpm build`, …) or from this package.
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ludditelabs.dev/sitemap.xml
+Sitemap: https://luddites.dev/sitemap.xml

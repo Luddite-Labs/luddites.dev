@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = 'https://ludditelabs.dev'
+const DEFAULT_SITE_URL = 'https://luddites.dev'
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
 
 function trimTrailingSlash(value: string) {

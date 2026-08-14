@@ -8,7 +8,7 @@ import { seoFilesPlugin } from './scripts/seoFilesPlugin.ts'
 export default defineConfig(({ mode }) => {
   const root = fileURLToPath(new URL('.', import.meta.url))
   const env = loadEnv(mode, root, '')
-  const siteUrl = (env.VITE_SITE_URL || 'https://ludditelabs.dev').replace(
+  const siteUrl = (env.VITE_SITE_URL || 'https://luddites.dev').replace(
     /\/+$/,
     '',
   )

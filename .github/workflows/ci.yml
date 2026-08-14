@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          VITE_SITE_URL: https://ludditelabs.dev
+          VITE_SITE_URL: https://luddites.dev
           VITE_WEB3FORMS_ACCESS_KEY: ''
           VITE_CONTACT_ENDPOINT: ''
           VITE_API_BASE_URL: ''
@@ -61,7 +61,7 @@ jobs:
           push: false
           tags: luddites-dev:${{ github.sha }}
           build-args: |
-            VITE_SITE_URL=https://ludditelabs.dev
+            VITE_SITE_URL=https://luddites.dev
             VITE_WEB3FORMS_ACCESS_KEY=
             VITE_CONTACT_ENDPOINT=
             VITE_API_BASE_URL=

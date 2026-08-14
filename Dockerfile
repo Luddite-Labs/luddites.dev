@@ -14,7 +14,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY packages/client ./packages/client
 
-ARG VITE_SITE_URL=https://ludditelabs.dev
+ARG VITE_SITE_URL=https://luddites.dev
 ARG VITE_WEB3FORMS_ACCESS_KEY=
 ARG VITE_CONTACT_ENDPOINT=
 ARG VITE_API_BASE_URL=

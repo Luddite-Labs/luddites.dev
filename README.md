@@ -1,6 +1,6 @@
 # luddites.dev
 
-pnpm monorepo for [Luddite Labs](https://ludditelabs.dev).
+pnpm monorepo for [Luddite Labs](https://luddites.dev).
 
 ## Packages
 
@@ -47,7 +47,7 @@ pnpm lint      # lint the client
 docker compose up --build
 # or:
 docker build -t luddites-dev \
-  --build-arg VITE_SITE_URL=https://ludditelabs.dev \
+  --build-arg VITE_SITE_URL=https://luddites.dev \
   --build-arg VITE_WEB3FORMS_ACCESS_KEY=your_key \
   .
 docker run --rm -p 8080:80 luddites-dev
