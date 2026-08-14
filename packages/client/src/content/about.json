@@ -2,19 +2,19 @@
   "hero": {
     "eyebrow": "About",
     "title": "A small lab for stubborn software",
-    "lede": "Named for the original Luddites—not anti-technology, anti-careless technology. We build tools that respect the people who use them."
+    "lede": "Named for the original Luddites: not anti-technology, anti-careless technology. We build tools that respect the people who use them."
   },
   "story": {
     "eyebrow": "Story",
     "title": "Craft over cadence theater",
     "paragraphs": [
       "Luddite Labs started as a refusal: refuse bloated stacks, refuse roadmap theater, refuse interfaces that treat users like traffic.",
-      "Today we partner with product and ops teams across India—from Bengaluru and Hyderabad to Guwahati and Kochi—who want software that feels considered."
+      "We are a remote team across India. We partner with product and ops teams who want software that feels considered."
     ]
   },
   "principles": {
     "eyebrow": "Principles",
-    "title": "How we work the bench",
+    "title": "How we work",
     "items": [
       {
         "title": "Fewer parts",
@@ -26,18 +26,18 @@
       },
       {
         "title": "Honest interfaces",
-        "body": "UI and APIs should say what they mean—no dark patterns, no surprise payloads."
+        "body": "UI and APIs say what they mean. No dark patterns. No surprise payloads."
       },
       {
-        "title": "Workshop pace",
-        "body": "Fast where it is cheap, slow where mistakes are expensive."
+        "title": "Right pace",
+        "body": "Fast where it is cheap. Slow where mistakes are expensive."
       }
     ]
   },
   "team": {
     "eyebrow": "People",
     "title": "The crew",
-    "lede": "A tight group across India. We stay small on purpose.",
+    "lede": "Remote across India. Small on purpose.",
     "members": [
       {
         "name": "Ananya Iyer",
@@ -51,8 +51,8 @@
       },
       {
         "name": "Meren Ao",
-        "role": "Interface craft",
-        "bio": "Builds interfaces that feel precise, quiet, and useful. Roots in Kohima, studio days in Bengaluru."
+        "role": "Interface",
+        "bio": "Builds interfaces that feel precise, quiet, and useful. Based in Kohima."
       }
     ]
   }

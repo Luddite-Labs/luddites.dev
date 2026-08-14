@@ -16,7 +16,7 @@ export function HomeHero() {
         </p>
         <p className="max-w-xl text-lg text-muted-foreground">{hero.lede}</p>
         <CallToAction>
-          <Button asChild size="lg" celebrate>
+          <Button asChild size="lg">
             <Link to={hero.primaryCta.to}>{hero.primaryCta.label}</Link>
           </Button>
           <Button asChild variant="outline" size="lg">

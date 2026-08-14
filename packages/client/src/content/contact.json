@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Contact",
     "title": "Tell us what you are building",
-    "lede": "Share the constraints, the stakes, and the ugly parts. We will reply within two business days."
+    "lede": "Share the constraints, the stakes, and the ugly parts. We reply within two business days."
   },
   "details": [
     {
@@ -10,13 +10,13 @@
       "type": "email"
     },
     {
-      "label": "Studio",
+      "label": "Team",
       "type": "location"
     },
     {
       "label": "Engagements",
       "type": "text",
-      "body": "Product builds, platform APIs, and operational tools across India. Typical projects run 6–16 weeks."
+      "body": "Product builds, platform APIs, and operational tools. Typical projects run 6 to 16 weeks."
     }
   ],
   "form": {

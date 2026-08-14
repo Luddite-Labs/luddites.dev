@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "Work",
-    "title": "Projects with fingerprints on them",
-    "lede": "A short shelf of software from the lab—engines, tools, and experiments we actually ship."
+    "title": "Projects we ship",
+    "lede": "Engines, tools, and experiments. Short list. Real fingerprints."
   },
   "detail": {
     "eyebrow": "Case study",

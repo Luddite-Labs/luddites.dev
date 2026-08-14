@@ -1,8 +1,8 @@
 {
   "name": "Luddite Labs",
-  "tagline": "Software built with craft, clarity, and restraint.",
+  "tagline": "Clear software. Fewer moving parts.",
   "email": "hello@ludditelabs.dev",
-  "location": "Bengaluru · remote across India",
+  "location": "Remote across India",
   "nav": [
     { "to": "/", "label": "Home" },
     { "to": "/work", "label": "Work" },
@@ -12,6 +12,6 @@
   "footer": {
     "navigateHeading": "Navigate",
     "contactHeading": "Contact",
-    "metaNote": "Built with deliberate tooling"
+    "metaNote": "Built to last"
   }
 }

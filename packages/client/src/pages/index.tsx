@@ -12,7 +12,7 @@ export default function HomePage() {
         <title>Luddite Labs</title>
         <meta
           name="description"
-          content="Luddite Labs builds software with craft, clarity, and restraint."
+          content="Luddite Labs. Clear software. Fewer moving parts. Remote across India."
         />
       </Head>
       <HomeHero />

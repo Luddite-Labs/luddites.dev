@@ -43,7 +43,7 @@ export function ErrorFallback({
     >
       <p className="text-sm font-medium text-muted-foreground">Something broke</p>
       <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-        This part of the bench jammed.
+        Something went wrong.
       </h1>
       <p className="text-muted-foreground">
         You can retry, or inspect the error if you need to report it.

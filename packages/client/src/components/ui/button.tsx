@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { motion, useReducedMotion } from 'framer-motion'
-import { useCelebrate } from '@/components/celebrate/CelebrateProvider'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
@@ -47,40 +46,22 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  /** Play a theme-colored star burst on click (for primary CTAs). */
-  celebrate?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      className,
-      variant,
-      size,
-      asChild = false,
-      celebrate = false,
-      type = 'button',
-      onClick,
-      ...props
-    },
+    { className, variant, size, asChild = false, type = 'button', ...props },
     ref,
   ) => {
     const reduce = useReducedMotion()
-    const { celebrateFromEvent } = useCelebrate()
     const classes = cn(buttonVariants({ variant, size, className }))
     const Comp = asChild ? Slot : 'button'
-
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-      if (celebrate) celebrateFromEvent(event)
-      onClick?.(event as React.MouseEvent<HTMLButtonElement>)
-    }
 
     const button = (
       <Comp
         ref={ref}
         type={asChild ? undefined : type}
         className={classes}
-        onClick={handleClick}
         {...props}
       />
     )

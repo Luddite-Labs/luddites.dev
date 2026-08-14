@@ -11,7 +11,7 @@ export default function AboutPage() {
         <title>About · Luddite Labs</title>
         <meta
           name="description"
-          content="About Luddite Labs — a workshop for deliberate software."
+          content="About Luddite Labs. A remote team across India building stubborn software."
         />
       </Head>
       <AboutHero />
