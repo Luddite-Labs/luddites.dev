@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { enterTo, revealFrom, springReveal } from '@/components/motion/springs'
+import { useSkipEnterOnHydrate } from '@/hooks/useSkipEnterOnHydrate'
 
 export function Reveal({
   children,
@@ -10,13 +11,16 @@ export function Reveal({
   className?: string
 }) {
   const reduce = useReducedMotion()
+  const skipEnter = useSkipEnterOnHydrate()
+  const disable = reduce || skipEnter
+
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : revealFrom}
+      initial={disable ? false : revealFrom}
       whileInView={enterTo}
       viewport={{ once: true, amount: 0.25 }}
-      transition={reduce ? { duration: 0 } : springReveal}
+      transition={disable ? { duration: 0 } : springReveal}
     >
       {children}
     </motion.div>

@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { enterTo, revealFrom, springReveal } from '@/components/motion/springs'
+import { useSkipEnterOnHydrate } from '@/hooks/useSkipEnterOnHydrate'
 
 export function Stagger({
   children,
@@ -10,18 +11,21 @@ export function Stagger({
   className?: string
 }) {
   const reduce = useReducedMotion()
+  const skipEnter = useSkipEnterOnHydrate()
+  const disable = reduce || skipEnter
+
   return (
     <motion.div
       className={className}
-      initial="hidden"
+      initial={disable ? false : 'hidden'}
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={{
         hidden: {},
         show: {
           transition: {
-            staggerChildren: reduce ? 0 : 0.08,
-            delayChildren: reduce ? 0 : 0.04,
+            staggerChildren: disable ? 0 : 0.08,
+            delayChildren: disable ? 0 : 0.04,
           },
         },
       }}
@@ -39,14 +43,17 @@ export function StaggerItem({
   className?: string
 }) {
   const reduce = useReducedMotion()
+  const skipEnter = useSkipEnterOnHydrate()
+  const disable = reduce || skipEnter
+
   return (
     <motion.div
       className={className}
       variants={{
-        hidden: reduce ? enterTo : revealFrom,
+        hidden: disable ? enterTo : revealFrom,
         show: {
           ...enterTo,
-          transition: reduce ? { duration: 0 } : springReveal,
+          transition: disable ? { duration: 0 } : springReveal,
         },
       }}
     >
