@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headline": "Software with clear interfaces and fewer moving parts.",
-    "lede": "We build durable products and platforms. Craft over hype.",
+    "headline": "Clean software with clear interfaces and expertise.",
+    "lede": "We build durable products and platforms. For scale.",
     "primaryCta": { "label": "Start a project", "to": "/contact" },
     "secondaryCta": { "label": "See the work", "to": "/work" }
   },

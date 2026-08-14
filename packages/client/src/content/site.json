@@ -1,7 +1,7 @@
 {
   "name": "Luddite Labs",
-  "tagline": "Clear software. Fewer moving parts.",
-  "email": "hello@ludditelabs.dev",
+  "tagline": "Clean software. With expertise.",
+  "email": "hello@luddies.dev",
   "location": "Remote across India",
   "nav": [
     { "to": "/", "label": "Home" },
