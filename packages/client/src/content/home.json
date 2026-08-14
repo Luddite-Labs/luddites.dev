@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headline": "Clean software with clear interfaces and expertise.",
-    "lede": "We build durable products and platforms. For scale.",
+    "headline": "Clean software with cool interfaces and smart backends.",
+    "lede": "Built with expertise.",
     "primaryCta": { "label": "Start a project", "to": "/contact" },
     "secondaryCta": { "label": "See the work", "to": "/work" }
   },

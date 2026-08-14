@@ -9,7 +9,7 @@
     "title": "Craft over cadence theater",
     "paragraphs": [
       "Luddite Labs started as a refusal: refuse bloated stacks, refuse roadmap theater, refuse interfaces that treat users like traffic.",
-      "We are a remote team across India. We partner with product and ops teams who want software that feels considered."
+      "We are remote across India. We partner with product and ops teams who want software that feels considered."
     ]
   },
   "principles": {
@@ -31,28 +31,6 @@
       {
         "title": "Right pace",
         "body": "Fast where it is cheap. Slow where mistakes are expensive."
-      }
-    ]
-  },
-  "team": {
-    "eyebrow": "People",
-    "title": "The crew",
-    "lede": "Remote across India. Small on purpose.",
-    "members": [
-      {
-        "name": "Ananya Iyer",
-        "role": "Product engineering",
-        "bio": "Shapes product systems with a bias toward clarity and durable data models. Based in Chennai."
-      },
-      {
-        "name": "Kabir Singh",
-        "role": "Platform",
-        "bio": "Designs APIs and pipelines that stay calm when traffic does not. Works out of Delhi NCR."
-      },
-      {
-        "name": "Meren Ao",
-        "role": "Interface",
-        "bio": "Builds interfaces that feel precise, quiet, and useful. Based in Kohima."
       }
     ]
   }

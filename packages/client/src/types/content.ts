@@ -1,7 +1,6 @@
 export type {
   WorkCase,
   Principle,
-  TeamMember,
   Capability,
   SiteContent,
   HomeContent,

@@ -27,12 +27,6 @@ export type Principle = {
   body: string
 }
 
-export type TeamMember = {
-  name: string
-  role: string
-  bio: string
-}
-
 export type Capability = {
   index: string
   title: string
@@ -101,12 +95,6 @@ export type AboutContent = {
     eyebrow: string
     title: string
     items: Principle[]
-  }
-  team: {
-    eyebrow: string
-    title: string
-    lede: string
-    members: TeamMember[]
   }
 }
 
