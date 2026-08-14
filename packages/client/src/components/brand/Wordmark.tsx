@@ -1,6 +1,18 @@
 import { cn } from '@/lib/utils'
 import { site } from '@/content'
 
+function highlightLeadingLs(name: string) {
+  return name.split(' ').map((word, index) => (
+    <span key={`${word}-${index}`}>
+      {index > 0 ? ' ' : null}
+      {word.charAt(0) ? (
+        <span className="text-primary">{word.charAt(0)}</span>
+      ) : null}
+      {word.slice(1)}
+    </span>
+  ))
+}
+
 export function Wordmark({
   className,
   hero = false,
@@ -18,7 +30,7 @@ export function Wordmark({
         className,
       )}
     >
-      {site.name}
+      {hero ? highlightLeadingLs(site.name) : site.name}
     </Comp>
   )
 }
