@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ExternalLink } from 'lucide-react'
 import { Eyebrow } from '@/components/content/Eyebrow'
 import { MetaRow } from '@/components/content/MetaRow'
 import { Prose } from '@/components/content/Prose'
@@ -23,7 +24,7 @@ export function WorkDetail({ item }: { item: WorkCase }) {
           </p>
           <MetaRow
             items={[
-              { label: 'Client', value: item.client },
+              { label: detail.contextLabel, value: item.client },
               { label: 'Year', value: item.year },
             ]}
           />
@@ -50,6 +51,18 @@ export function WorkDetail({ item }: { item: WorkCase }) {
             </div>
             <Separator />
             <div className="flex flex-col gap-3">
+              {item.repo ? (
+                <Button asChild variant="outline">
+                  <a
+                    href={item.repo}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {detail.repoLabel}
+                    <ExternalLink className="size-4" />
+                  </a>
+                </Button>
+              ) : null}
               <Button asChild variant="outline">
                 <Link to="/work">{detail.backLabel}</Link>
               </Button>

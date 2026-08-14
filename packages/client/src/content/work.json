@@ -2,11 +2,13 @@
   "hero": {
     "eyebrow": "Work",
     "title": "Projects with fingerprints on them",
-    "lede": "A short shelf of software we shaped for teams who care about the seams."
+    "lede": "A short shelf of software from the lab—engines, tools, and experiments we actually ship."
   },
   "detail": {
     "eyebrow": "Case study",
+    "contextLabel": "Context",
     "stackLabel": "Stack",
+    "repoLabel": "View on GitHub",
     "backLabel": "Back to work",
     "ctaLabel": "Start something similar",
     "missingTitle": "We could not find that project.",

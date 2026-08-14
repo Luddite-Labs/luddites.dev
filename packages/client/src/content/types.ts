@@ -18,6 +18,8 @@ export type WorkCase = {
   approach: string
   outcome: string
   stack: string[]
+  /** Optional public or org repository URL */
+  repo?: string
 }
 
 export type Principle = {
@@ -116,7 +118,9 @@ export type WorkPageContent = {
   }
   detail: {
     eyebrow: string
+    contextLabel: string
     stackLabel: string
+    repoLabel: string
     backLabel: string
     ctaLabel: string
     missingTitle: string

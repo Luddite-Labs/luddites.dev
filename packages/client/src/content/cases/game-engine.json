@@ -1,0 +1,12 @@
+{
+  "slug": "game-engine",
+  "title": "Game Engine",
+  "client": "Internal",
+  "year": "2026",
+  "summary": "A from-scratch C++ game engine—public so the machinery stays inspectable.",
+  "problem": "Heavy commercial engines hide the loop, the renderer, and the trade-offs. We wanted a core we own and can read end to end.",
+  "approach": "Building the engine in C++, openly, system by system. The repository is the documentation of what works and what we are still shaping.",
+  "outcome": "A living public codebase the lab can grow, study against, and use as a foundation for experiments.",
+  "stack": ["C++"],
+  "repo": "https://github.com/Luddite-Labs/Game-Engine"
+}

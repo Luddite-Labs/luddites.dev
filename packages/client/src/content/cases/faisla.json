@@ -1,0 +1,12 @@
+{
+  "slug": "faisla",
+  "title": "Faisla",
+  "client": "Internal",
+  "year": "2025",
+  "summary": "A Challonge-style tournament maker for brackets, players, and match flow.",
+  "problem": "Standing up a tournament still means fighting spreadsheets or SaaS that will not bend to the event.",
+  "approach": "Building Faisla as a focused tournament maker—bracket setup and match progression without the noise of a full platform.",
+  "outcome": "A private tool we use to run tournaments on our own terms.",
+  "stack": ["CSS"],
+  "repo": "https://github.com/Luddite-Labs/Faisla"
+}
