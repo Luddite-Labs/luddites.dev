@@ -1,15 +1,15 @@
 import { cn } from '@/lib/utils'
+import { ASSETS } from '@/lib/assets'
 
 export function BrandMark({ className }: { className?: string }) {
   return (
-    <span
-      className={cn(
-        'flex size-8 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground',
-        className,
-      )}
+    <img
+      src={ASSETS.logo}
+      alt=""
+      width={32}
+      height={32}
+      className={cn('size-8 rounded-md', className)}
       aria-hidden="true"
-    >
-      L
-    </span>
+    />
   )
 }
