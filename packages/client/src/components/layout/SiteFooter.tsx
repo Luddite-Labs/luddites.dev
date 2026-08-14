@@ -1,6 +1,7 @@
 import { Logo } from '@/components/brand/Logo'
 import { NavLink } from '@/components/layout/NavLink'
 import { Separator } from '@/components/ui/separator'
+import { site } from '@/content'
 import { SITE, NAV_LINKS } from '@/lib/constants'
 
 export function SiteFooter() {
@@ -12,7 +13,7 @@ export function SiteFooter() {
           <p className="max-w-sm text-sm text-muted-foreground">{SITE.tagline}</p>
         </div>
         <div className="space-y-3">
-          <p className="text-sm font-medium">Navigate</p>
+          <p className="text-sm font-medium">{site.footer.navigateHeading}</p>
           <ul className="space-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
@@ -24,7 +25,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="space-y-3">
-          <p className="text-sm font-medium">Contact</p>
+          <p className="text-sm font-medium">{site.footer.contactHeading}</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
               <a className="hover:text-foreground" href={`mailto:${SITE.email}`}>
@@ -40,7 +41,7 @@ export function SiteFooter() {
         <span>
           © {new Date().getFullYear()} {SITE.name}
         </span>
-        <span>Built with deliberate tooling</span>
+        <span>{site.footer.metaNote}</span>
       </div>
     </footer>
   )

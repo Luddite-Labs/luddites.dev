@@ -8,6 +8,7 @@ import {
 import { FormFieldText } from '@/components/form/FormField'
 import { SubmitButton } from '@/components/form/SubmitButton'
 import { Form } from '@/components/ui/form'
+import { contact } from '@/content'
 import { useSubmitContactMutation } from '@/features/contact/contactApi'
 import {
   markSubmitted,
@@ -18,6 +19,7 @@ export function ContactForm() {
   const dispatch = useDispatch()
   const statusMessage = useSelector(selectContactStatus)
   const [submitContact, { isLoading }] = useSubmitContactMutation()
+  const { form: formCopy } = contact
 
   const form = useForm<ContactFormValues>({
     resolver: yupResolver(contactSchema),
@@ -43,26 +45,26 @@ export function ContactForm() {
         <FormFieldText
           control={form.control}
           name="name"
-          label="Name"
-          placeholder="Ada Voss"
+          label={formCopy.fields.name.label}
+          placeholder={formCopy.fields.name.placeholder}
         />
         <FormFieldText
           control={form.control}
           name="email"
-          label="Email"
-          placeholder="ada@example.com"
+          label={formCopy.fields.email.label}
+          placeholder={formCopy.fields.email.placeholder}
         />
         <FormFieldText
           control={form.control}
           name="company"
-          label="Company"
-          placeholder="Optional"
+          label={formCopy.fields.company.label}
+          placeholder={formCopy.fields.company.placeholder}
         />
         <FormFieldText
           control={form.control}
           name="message"
-          label="Project notes"
-          placeholder="What are you building, and what is in the way?"
+          label={formCopy.fields.message.label}
+          placeholder={formCopy.fields.message.placeholder}
           multiline
         />
         {statusMessage ? (
@@ -73,7 +75,12 @@ export function ContactForm() {
             {statusMessage}
           </p>
         ) : null}
-        <SubmitButton pending={isLoading} />
+        <SubmitButton
+          pending={isLoading}
+          pendingLabel={formCopy.pendingLabel}
+        >
+          {formCopy.submitLabel}
+        </SubmitButton>
       </form>
     </Form>
   )

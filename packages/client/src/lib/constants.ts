@@ -1,13 +1,10 @@
+import { site } from '@/content'
+
 export const SITE = {
-  name: 'Luddite Labs',
-  tagline: 'Software built with craft, clarity, and restraint.',
-  email: 'hello@ludditelabs.dev',
-  location: 'Remote-first workshop',
+  name: site.name,
+  tagline: site.tagline,
+  email: site.email,
+  location: site.location,
 } as const
 
-export const NAV_LINKS = [
-  { to: '/', label: 'Home' },
-  { to: '/work', label: 'Work' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-] as const
+export const NAV_LINKS = site.nav

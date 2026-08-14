@@ -3,6 +3,7 @@ import { Logo } from '@/components/brand/Logo'
 import { NavLink } from '@/components/layout/NavLink'
 import { MobileNav } from '@/components/layout/MobileNav'
 import { Button } from '@/components/ui/button'
+import { home } from '@/content'
 import { NAV_LINKS } from '@/lib/constants'
 
 export function SiteHeader() {
@@ -19,7 +20,7 @@ export function SiteHeader() {
         </nav>
         <div className="ml-auto flex items-center gap-2 md:ml-0">
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <Link to="/contact">Start a project</Link>
+            <Link to={home.hero.primaryCta.to}>{home.hero.primaryCta.label}</Link>
           </Button>
           <MobileNav />
         </div>

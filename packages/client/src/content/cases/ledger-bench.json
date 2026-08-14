@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-bench",
+  "title": "Ledger Bench",
+  "client": "Northline Finance",
+  "year": "2025",
+  "summary": "A reconciliation console that replaces spreadsheet chaos with calm, auditable workflows.",
+  "problem": "Ops teams were drowning in brittle spreadsheets and overnight batch jobs with no clear ownership.",
+  "approach": "We mapped the real desk rituals, then rebuilt the flow around exceptions—not every row.",
+  "outcome": "Month-end close dropped from five days to one and a half, with a full audit trail.",
+  "stack": ["TypeScript", "React", "PostgreSQL", "Temporal"]
+}

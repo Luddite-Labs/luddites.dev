@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "eyebrow": "Work",
+    "title": "Projects with fingerprints on them",
+    "lede": "A short shelf of software we shaped for teams who care about the seams."
+  },
+  "detail": {
+    "eyebrow": "Case study",
+    "stackLabel": "Stack",
+    "backLabel": "Back to work",
+    "ctaLabel": "Start something similar",
+    "missingTitle": "We could not find that project.",
+    "missingEyebrow": "Missing case study"
+  },
+  "card": {
+    "footerLabel": "Case study"
+  }
+}

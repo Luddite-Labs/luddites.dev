@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { WorkDetail } from '@/components/sections/work/WorkDetail'
 import { getWorkBySlug, getWorkSlugs } from '@/features/work/workData'
 import { Button } from '@/components/ui/button'
+import { site, workPage } from '@/content'
 
 export function getStaticPaths() {
   return getWorkSlugs()
@@ -15,12 +16,14 @@ export default function WorkCasePage() {
   if (!item) {
     return (
       <section className="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-start justify-center gap-4 px-4 sm:px-6">
-        <p className="text-sm text-muted-foreground">Missing case study</p>
+        <p className="text-sm text-muted-foreground">
+          {workPage.detail.missingEyebrow}
+        </p>
         <h1 className="text-3xl font-semibold tracking-tight">
-          We could not find that project.
+          {workPage.detail.missingTitle}
         </h1>
         <Button asChild variant="outline">
-          <Link to="/work">Back to work</Link>
+          <Link to="/work">{workPage.detail.backLabel}</Link>
         </Button>
       </section>
     )
@@ -29,7 +32,9 @@ export default function WorkCasePage() {
   return (
     <>
       <Head>
-        <title>{item.title} · Luddite Labs</title>
+        <title>
+          {item.title} · {site.name}
+        </title>
         <meta name="description" content={item.summary} />
       </Head>
       <WorkDetail item={item} />

@@ -4,14 +4,17 @@ import { MetaRow } from '@/components/content/MetaRow'
 import { Prose } from '@/components/content/Prose'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { workPage } from '@/content'
 import type { WorkCase } from '@/types/content'
 
 export function WorkDetail({ item }: { item: WorkCase }) {
+  const { detail } = workPage
+
   return (
     <>
       <section className="border-b bg-muted/30">
         <div className="mx-auto max-w-6xl space-y-4 px-4 py-16 sm:px-6 sm:py-20">
-          <Eyebrow>Case study</Eyebrow>
+          <Eyebrow>{detail.eyebrow}</Eyebrow>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             {item.title}
           </h1>
@@ -38,7 +41,7 @@ export function WorkDetail({ item }: { item: WorkCase }) {
           </Prose>
           <aside className="space-y-6 lg:border-l lg:pl-8">
             <div>
-              <p className="mb-2 text-sm font-medium">Stack</p>
+              <p className="mb-2 text-sm font-medium">{detail.stackLabel}</p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 {item.stack.map((tech) => (
                   <li key={tech}>{tech}</li>
@@ -48,10 +51,10 @@ export function WorkDetail({ item }: { item: WorkCase }) {
             <Separator />
             <div className="flex flex-col gap-3">
               <Button asChild variant="outline">
-                <Link to="/work">Back to work</Link>
+                <Link to="/work">{detail.backLabel}</Link>
               </Button>
               <Button asChild>
-                <Link to="/contact">Start something similar</Link>
+                <Link to="/contact">{detail.ctaLabel}</Link>
               </Button>
             </div>
           </aside>

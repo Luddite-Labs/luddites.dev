@@ -1,28 +1,22 @@
 import { SectionHeading } from '@/components/content/SectionHeading'
 import { Prose } from '@/components/content/Prose'
 import { Reveal } from '@/components/motion/Reveal'
+import { home } from '@/content'
 
 export function HomePromise() {
+  const { promise } = home
+
   return (
     <section className="py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2 md:items-end">
         <Reveal>
-          <SectionHeading
-            eyebrow="The promise"
-            title="We slow down where it matters so your software can move faster later."
-          />
+          <SectionHeading eyebrow={promise.eyebrow} title={promise.title} />
         </Reveal>
         <Reveal>
           <Prose>
-            <p>
-              Most teams do not need more frameworks. They need sharper
-              boundaries, cleaner data, and interfaces people can trust under
-              pressure.
-            </p>
-            <p>
-              We treat software like shop work: measure twice, cut once, leave
-              the bench ready for the next craftsperson.
-            </p>
+            {promise.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </Prose>
         </Reveal>
       </div>

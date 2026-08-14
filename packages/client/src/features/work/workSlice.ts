@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { workCases } from '@/features/work/workData'
+import { getFeaturedWork, workCases } from '@/features/work/workData'
 import type { WorkCase } from '@/types/content'
 
 type WorkState = {
@@ -17,6 +17,6 @@ const workSlice = createSlice({
 })
 
 export const selectWorkItems = (state: { work: WorkState }) => state.work.items
-export const selectFeaturedWork = (state: { work: WorkState }) =>
-  state.work.items.slice(0, 2)
+export const selectFeaturedWork = (_state: { work: WorkState }) =>
+  getFeaturedWork()
 export default workSlice.reducer

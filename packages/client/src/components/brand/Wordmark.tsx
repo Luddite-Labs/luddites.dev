@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { site } from '@/content'
 
 export function Wordmark({
   className,
@@ -17,7 +18,7 @@ export function Wordmark({
         className,
       )}
     >
-      Luddite Labs
+      {site.name}
     </Comp>
   )
 }

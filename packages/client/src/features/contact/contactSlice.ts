@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { contact } from '@/content'
 
 type ContactUiState = {
   lastSubmittedAt: string | null
@@ -16,7 +17,7 @@ const contactSlice = createSlice({
   reducers: {
     markSubmitted(state, action: PayloadAction<string>) {
       state.lastSubmittedAt = action.payload
-      state.statusMessage = 'Message received. We will reply within two business days.'
+      state.statusMessage = contact.form.successMessage
     },
     clearStatus(state) {
       state.statusMessage = null

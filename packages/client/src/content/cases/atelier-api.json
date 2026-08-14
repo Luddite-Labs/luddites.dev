@@ -1,0 +1,11 @@
+{
+  "slug": "atelier-api",
+  "title": "Atelier API",
+  "client": "Fieldnote",
+  "year": "2024",
+  "summary": "A partner platform API with documentation that reads like a workshop manual.",
+  "problem": "Integrators could not ship against an uneven API surface and tribal knowledge docs.",
+  "approach": "Contracts first, examples second, and a versioning story partners can trust.",
+  "outcome": "Partner go-live time cut from weeks to days; support tickets declined sharply.",
+  "stack": ["Node", "OpenAPI", "Redis", "Postgres"]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Luddite Labs",
+  "tagline": "Software built with craft, clarity, and restraint.",
+  "email": "hello@ludditelabs.dev",
+  "location": "Remote-first workshop",
+  "nav": [
+    { "to": "/", "label": "Home" },
+    { "to": "/work", "label": "Work" },
+    { "to": "/about", "label": "About" },
+    { "to": "/contact", "label": "Contact" }
+  ],
+  "footer": {
+    "navigateHeading": "Navigate",
+    "contactHeading": "Contact",
+    "metaNote": "Built with deliberate tooling"
+  }
+}

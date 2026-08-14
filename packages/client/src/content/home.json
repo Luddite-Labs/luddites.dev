@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "headline": "Software shaped carefully—clear interfaces, fewer moving parts.",
+    "lede": "Luddite Labs builds durable products and platforms for teams who value craft over hype.",
+    "primaryCta": { "label": "Start a project", "to": "/contact" },
+    "secondaryCta": { "label": "See the work", "to": "/work" }
+  },
+  "promise": {
+    "eyebrow": "The promise",
+    "title": "We slow down where it matters so your software can move faster later.",
+    "paragraphs": [
+      "Most teams do not need more frameworks. They need sharper boundaries, cleaner data, and interfaces people can trust under pressure.",
+      "We treat software like shop work: measure twice, cut once, leave the bench ready for the next craftsperson."
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "What we build",
+    "lede": "Focused engagements—not bloated roadmaps.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Product systems",
+        "body": "End-to-end web products with sober IA, accessible UI, and performance that holds up in the wild."
+      },
+      {
+        "index": "02",
+        "title": "Platform APIs",
+        "body": "Contracts, versioning, and docs that partners can build against without tribal knowledge."
+      },
+      {
+        "index": "03",
+        "title": "Operational tools",
+        "body": "Internal consoles that cut noise, expose decisions, and respect the people on call."
+      }
+    ]
+  },
+  "selectedWork": {
+    "eyebrow": "Selected work",
+    "title": "Case studies from the bench",
+    "ctaLabel": "All projects",
+    "ctaTo": "/work",
+    "featuredCount": 2
+  },
+  "cta": {
+    "eyebrow": "Next",
+    "title": "Bring us a hard problem.",
+    "lede": "If the brief is messy, good. That is usually where the real work starts.",
+    "primaryCta": { "label": "Talk with us", "to": "/contact" },
+    "secondaryCta": { "label": "About the lab", "to": "/about" }
+  }
+}

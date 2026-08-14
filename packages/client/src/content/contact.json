@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Tell us what you are building",
+    "lede": "Share the constraints, the stakes, and the ugly parts. We will reply within two business days."
+  },
+  "details": [
+    {
+      "label": "Email",
+      "type": "email"
+    },
+    {
+      "label": "Studio",
+      "type": "location"
+    },
+    {
+      "label": "Engagements",
+      "type": "text",
+      "body": "Product builds, platform APIs, and operational tools. Typical projects run 6–16 weeks."
+    }
+  ],
+  "form": {
+    "submitLabel": "Send message",
+    "pendingLabel": "Sending…",
+    "successMessage": "Message received. We will reply within two business days.",
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Ada Voss" },
+      "email": { "label": "Email", "placeholder": "ada@example.com" },
+      "company": { "label": "Company", "placeholder": "Optional" },
+      "message": {
+        "label": "Project notes",
+        "placeholder": "What are you building, and what is in the way?"
+      }
+    }
+  }
+}

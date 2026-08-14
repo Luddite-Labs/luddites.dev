@@ -3,14 +3,16 @@ import { Button } from '@/components/ui/button'
 
 export function SubmitButton({
   pending,
+  pendingLabel = 'Sending…',
   children = 'Send message',
 }: {
   pending?: boolean
+  pendingLabel?: string
   children?: ReactNode
 }) {
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? 'Sending…' : children}
+      {pending ? pendingLabel : children}
     </Button>
   )
 }

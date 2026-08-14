@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { workPage } from '@/content'
 import type { WorkCase } from '@/types/content'
 
 export function WorkCard({ item }: { item: WorkCase }) {
@@ -21,7 +22,7 @@ export function WorkCard({ item }: { item: WorkCase }) {
           <CardDescription>{item.summary}</CardDescription>
         </CardHeader>
         <CardFooter className="gap-2 text-sm font-medium">
-          Case study
+          {workPage.card.footerLabel}
           <ArrowRight className="size-4" />
         </CardFooter>
       </Card>
