@@ -2,7 +2,6 @@ import { Head } from 'vite-react-ssg'
 import { ContactHero } from '@/components/sections/contact/ContactHero'
 import { ContactForm } from '@/components/sections/contact/ContactForm'
 import { ContactDetails } from '@/components/sections/contact/ContactDetails'
-import { Reveal } from '@/components/motion/Reveal'
 
 export default function ContactPage() {
   return (
@@ -17,12 +16,8 @@ export default function ContactPage() {
       <ContactHero />
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal>
-            <ContactForm />
-          </Reveal>
-          <Reveal>
-            <ContactDetails />
-          </Reveal>
+          <ContactForm />
+          <ContactDetails />
         </div>
       </section>
     </>

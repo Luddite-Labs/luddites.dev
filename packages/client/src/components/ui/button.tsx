@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
@@ -16,7 +17,8 @@ const buttonVariants = cva(
           'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         secondary:
           'border border-border bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'border border-transparent hover:bg-accent hover:text-accent-foreground',
+        ghost:
+          'border border-transparent hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
@@ -33,6 +35,13 @@ const buttonVariants = cva(
   },
 )
 
+const springTap = {
+  type: 'spring' as const,
+  stiffness: 520,
+  damping: 18,
+  mass: 0.6,
+}
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
@@ -40,14 +49,34 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, variant, size, asChild = false, type = 'button', ...props },
+    ref,
+  ) => {
+    const reduce = useReducedMotion()
+    const classes = cn(buttonVariants({ variant, size, className }))
     const Comp = asChild ? Slot : 'button'
-    return (
+
+    const button = (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        type={asChild ? undefined : type}
+        className={classes}
         {...props}
       />
+    )
+
+    if (reduce) return button
+
+    return (
+      <motion.span
+        className="inline-flex"
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+        transition={springTap}
+      >
+        {button}
+      </motion.span>
     )
   },
 )
