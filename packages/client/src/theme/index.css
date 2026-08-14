@@ -129,7 +129,7 @@
   }
 
   body {
-    @apply min-h-svh bg-background font-sans text-foreground antialiased;
+    @apply min-h-svh cursor-default bg-background font-sans text-foreground antialiased;
   }
 
   #root {
