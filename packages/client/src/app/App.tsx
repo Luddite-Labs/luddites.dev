@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import type { RouteRecord } from 'vite-react-ssg'
 import generatedRoutes from '~react-pages'
 import { Providers } from '@/app/providers'
+import { ErrorBoundary } from '@/components/error/ErrorBoundary'
 import { PageShell } from '@/components/layout/PageShell'
 import { getWorkSlugs } from '@/features/work/workData'
 
@@ -27,9 +28,11 @@ export const routes: RouteRecord[] = [
     path: '/',
     element: (
       <Providers>
-        <Suspense fallback={null}>
-          <PageShell />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={null}>
+            <PageShell />
+          </Suspense>
+        </ErrorBoundary>
       </Providers>
     ),
     children: withStaticPaths(generatedRoutes as RouteRecord[]),
