@@ -1,0 +1,26 @@
+---
+description: Commit message wording — never mention Cursor; say coding agent if needed
+alwaysApply: true
+---
+
+# Commit message attribution
+
+When writing git commit messages for this repository:
+
+- Never mention Cursor, Cursor Agent, Auto, Composer, or any Cursor product name.
+- Do not include AI tool branding, model names, or IDE names in commit subjects or bodies.
+- If attribution or assistance must be mentioned, write **coding agent** only.
+- Prefer commit messages that describe the change with no AI/tool attribution at all.
+
+```text
+# BAD
+Generated with Cursor
+Co-authored-by: Cursor
+Made by Cursor Agent / Auto / Composer
+
+# GOOD (no attribution)
+Add contact form validation with Yup
+
+# GOOD (if attribution is required)
+Assisted by coding agent
+```
