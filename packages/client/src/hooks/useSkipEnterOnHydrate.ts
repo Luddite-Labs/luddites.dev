@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 /**
  * Skip enter motion for components that mount during the first client paint
