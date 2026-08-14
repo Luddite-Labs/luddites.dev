@@ -11,7 +11,11 @@ export function Logo({
   showWordmark?: boolean
 }) {
   return (
-    <Link to="/" className={cn('ll-logo', className)} aria-label="Luddite Labs home">
+    <Link
+      to="/"
+      className={cn('inline-flex items-center gap-2', className)}
+      aria-label="Luddite Labs home"
+    >
       <BrandMark />
       {showWordmark ? <Wordmark /> : null}
     </Link>

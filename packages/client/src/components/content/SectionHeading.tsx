@@ -13,10 +13,12 @@ export function SectionHeading({
   className?: string
 }) {
   return (
-    <header className={cn('ll-section-heading', className)}>
+    <header className={cn('max-w-2xl space-y-3', className)}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-      <h2 className="ll-section-heading__title">{title}</h2>
-      {lede ? <p className="ll-section-heading__lede">{lede}</p> : null}
+      <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        {title}
+      </h2>
+      {lede ? <p className="text-lg text-muted-foreground">{lede}</p> : null}
     </header>
   )
 }

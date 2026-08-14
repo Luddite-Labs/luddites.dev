@@ -1,6 +1,12 @@
 import { SectionHeading } from '@/components/content/SectionHeading'
 import { Reveal } from '@/components/motion/Reveal'
 import { Stagger, StaggerItem } from '@/components/motion/Stagger'
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import type { Capability } from '@/types/content'
 
 const capabilities: Capability[] = [
@@ -23,24 +29,27 @@ const capabilities: Capability[] = [
 
 export function HomeCapabilities() {
   return (
-    <section className="ll-section ll-section--tight">
-      <div className="ll-container">
+    <section className="border-y bg-muted/20 py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow="Capabilities"
             title="What we build"
             lede="Focused engagements—not bloated roadmaps."
-            className="ll-section-heading--spaced"
           />
         </Reveal>
-        <Stagger className="ll-capabilities">
+        <Stagger className="grid gap-4 md:grid-cols-3">
           {capabilities.map((item) => (
             <StaggerItem key={item.index}>
-              <article className="ll-capability">
-                <p className="ll-capability__index">{item.index}</p>
-                <h3 className="ll-capability__title">{item.title}</h3>
-                <p className="ll-capability__body">{item.body}</p>
-              </article>
+              <Card className="h-full">
+                <CardHeader>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    {item.index}
+                  </p>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.body}</CardDescription>
+                </CardHeader>
+              </Card>
             </StaggerItem>
           ))}
         </Stagger>

@@ -2,7 +2,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Menu } from 'lucide-react'
 import { NavLink } from '@/components/layout/NavLink'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { NAV_LINKS } from '@/lib/constants'
 import {
   closeMobileNav,
@@ -22,17 +28,15 @@ export function MobileNav() {
       }}
     >
       <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="ll-header__menu-trigger"
-          aria-label="Open menu"
-        >
-          <Menu size={18} />
+        <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+          <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent title="Menu">
-        <nav className="ll-mobile-nav" aria-label="Mobile">
+      <SheetContent side="right">
+        <SheetHeader>
+          <SheetTitle>Menu</SheetTitle>
+        </SheetHeader>
+        <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}

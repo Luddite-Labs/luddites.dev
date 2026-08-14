@@ -9,9 +9,13 @@ export function Eyebrow({
   className?: string
 }) {
   return (
-    <p className={cn('ll-eyebrow', className)}>
-      <span className="ll-eyebrow__rule" aria-hidden="true" />
-      <span>{children}</span>
+    <p
+      className={cn(
+        'text-sm font-medium text-muted-foreground',
+        className,
+      )}
+    >
+      {children}
     </p>
   )
 }

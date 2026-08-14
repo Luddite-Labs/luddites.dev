@@ -6,10 +6,10 @@ import { PageTransition } from '@/components/motion/PageTransition'
 
 export function PageShell() {
   return (
-    <div className="ll-page">
+    <div className="flex min-h-svh flex-col">
       <SkipLink />
       <SiteHeader />
-      <main id="main" className="ll-page__main">
+      <main id="main" className="flex-1">
         <PageTransition>
           <Outlet />
         </PageTransition>

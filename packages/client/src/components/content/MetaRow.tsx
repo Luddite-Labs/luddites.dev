@@ -13,11 +13,11 @@ export function MetaRow({
   className?: string
 }) {
   return (
-    <dl className={cn('ll-meta-row', className)}>
+    <dl className={cn('flex flex-wrap gap-x-6 gap-y-2 text-sm', className)}>
       {items.map((item) => (
-        <div key={item.label} className="ll-meta-row__item">
-          <dt className="ll-meta-row__label">{item.label}</dt>
-          <dd>{item.value}</dd>
+        <div key={item.label} className="flex gap-2">
+          <dt className="text-muted-foreground">{item.label}</dt>
+          <dd className="font-medium">{item.value}</dd>
         </div>
       ))}
     </dl>

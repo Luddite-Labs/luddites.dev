@@ -11,9 +11,13 @@ export function Wordmark({
 }) {
   return (
     <Comp
-      className={cn('ll-wordmark', hero && 'll-wordmark--hero', className)}
+      className={cn(
+        'font-semibold tracking-tight',
+        hero ? 'text-4xl sm:text-5xl md:text-6xl' : 'text-base',
+        className,
+      )}
     >
-      Luddite <span className="ll-wordmark__labs">Labs</span>
+      Luddite Labs
     </Comp>
   )
 }

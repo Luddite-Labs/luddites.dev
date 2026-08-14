@@ -8,5 +8,9 @@ export function FormError({
   className?: string
 }) {
   if (!message) return null
-  return <p className={cn('ll-form-error', className)}>{message}</p>
+  return (
+    <p className={cn('text-sm font-medium text-destructive', className)}>
+      {message}
+    </p>
+  )
 }

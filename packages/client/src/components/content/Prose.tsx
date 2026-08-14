@@ -8,5 +8,14 @@ export function Prose({
   children: ReactNode
   className?: string
 }) {
-  return <div className={cn('ll-prose', className)}>{children}</div>
+  return (
+    <div
+      className={cn(
+        'max-w-xl space-y-4 text-base leading-relaxed text-muted-foreground',
+        className,
+      )}
+    >
+      {children}
+    </div>
+  )
 }

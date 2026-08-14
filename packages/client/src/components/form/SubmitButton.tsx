@@ -9,7 +9,7 @@ export function SubmitButton({
   children?: ReactNode
 }) {
   return (
-    <Button type="submit" variant="accent" disabled={pending}>
+    <Button type="submit" disabled={pending}>
       {pending ? 'Sending…' : children}
     </Button>
   )

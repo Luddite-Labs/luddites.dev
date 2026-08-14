@@ -1,19 +1,20 @@
 import type { ReactNode } from 'react'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 
 export function NavLink({
   to,
   children,
   className,
   onClick,
-  variant = 'default',
+  variant = 'nav',
 }: {
   to: string
   children: ReactNode
   className?: string
   onClick?: () => void
-  variant?: 'default' | 'footer' | 'mobile'
+  variant?: 'nav' | 'mobile' | 'footer'
 }) {
   return (
     <RouterNavLink
@@ -22,12 +23,18 @@ export function NavLink({
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          variant === 'mobile'
-            ? 'll-mobile-nav__link'
-            : variant === 'footer'
-              ? 'll-nav-link ll-nav-link--footer'
-              : 'll-nav-link',
-          isActive && variant === 'default' && 'll-nav-link--active',
+          variant === 'nav' &&
+            cn(
+              buttonVariants({ variant: 'ghost', size: 'sm' }),
+              isActive && 'bg-accent text-accent-foreground',
+            ),
+          variant === 'mobile' &&
+            cn(
+              'block rounded-md px-3 py-2 text-base font-medium hover:bg-accent',
+              isActive && 'bg-accent',
+            ),
+          variant === 'footer' &&
+            'text-sm text-muted-foreground hover:text-foreground',
           className,
         )
       }

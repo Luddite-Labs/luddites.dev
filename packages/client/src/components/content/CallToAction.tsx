@@ -8,5 +8,9 @@ export function CallToAction({
   children: ReactNode
   className?: string
 }) {
-  return <div className={cn('ll-cta-group', className)}>{children}</div>
+  return (
+    <div className={cn('flex flex-wrap items-center gap-3', className)}>
+      {children}
+    </div>
+  )
 }

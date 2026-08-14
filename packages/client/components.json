@@ -8,7 +8,7 @@
     "css": "src/theme/index.css",
     "baseColor": "neutral",
     "cssVariables": true,
-    "prefix": "ll-"
+    "prefix": ""
   },
   "aliases": {
     "components": "@/components",

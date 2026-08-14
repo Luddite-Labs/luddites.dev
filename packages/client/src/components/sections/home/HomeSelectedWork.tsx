@@ -10,20 +10,20 @@ export function HomeSelectedWork() {
   const items = useSelector(selectFeaturedWork)
 
   return (
-    <section className="ll-section">
-      <div className="ll-container">
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6">
         <Reveal>
-          <div className="ll-section-head-row">
+          <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
               eyebrow="Selected work"
               title="Case studies from the bench"
             />
-            <Button asChild variant="secondary">
+            <Button asChild variant="outline">
               <Link to="/work">All projects</Link>
             </Button>
           </div>
         </Reveal>
-        <div className="ll-work-grid">
+        <div className="grid gap-4 md:grid-cols-2">
           {items.map((item) => (
             <Reveal key={item.slug}>
               <WorkCard item={item} />

@@ -24,21 +24,20 @@ const principles: Principle[] = [
 
 export function AboutPrinciples() {
   return (
-    <section className="ll-section ll-section--tight">
-      <div className="ll-container">
+    <section className="border-y bg-muted/20 py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow="Principles"
             title="How we work the bench"
-            className="ll-section-heading--spaced"
           />
         </Reveal>
-        <Stagger className="ll-principles">
+        <Stagger className="grid gap-6 md:grid-cols-2">
           {principles.map((item) => (
             <StaggerItem key={item.title}>
-              <article className="ll-principle">
-                <h3 className="ll-principle__title">{item.title}</h3>
-                <p className="ll-principle__body">{item.body}</p>
+              <article className="space-y-2 border-l-2 border-primary pl-4">
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.body}</p>
               </article>
             </StaggerItem>
           ))}

@@ -15,8 +15,8 @@ export default function ContactPage() {
         />
       </Head>
       <ContactHero />
-      <section className="ll-section">
-        <div className="ll-container ll-contact-layout">
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <ContactForm />
           </Reveal>

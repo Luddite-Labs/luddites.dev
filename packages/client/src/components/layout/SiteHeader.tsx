@@ -7,18 +7,18 @@ import { NAV_LINKS } from '@/lib/constants'
 
 export function SiteHeader() {
   return (
-    <header className="ll-header">
-      <div className="ll-container ll-header__inner">
+    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 sm:px-6">
         <Logo />
-        <nav className="ll-header__nav" aria-label="Primary">
+        <nav className="ml-auto hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to}>
               {link.label}
             </NavLink>
           ))}
         </nav>
-        <div className="ll-header__actions">
-          <Button asChild variant="secondary" size="sm" className="ll-header__cta-desktop">
+        <div className="ml-auto flex items-center gap-2 md:ml-0">
+          <Button asChild size="sm" className="hidden md:inline-flex">
             <Link to="/contact">Start a project</Link>
           </Button>
           <MobileNav />

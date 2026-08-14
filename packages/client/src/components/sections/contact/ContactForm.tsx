@@ -39,8 +39,13 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form className="ll-form" onSubmit={onSubmit} noValidate>
-        <FormFieldText control={form.control} name="name" label="Name" placeholder="Ada Voss" />
+      <form className="space-y-5" onSubmit={onSubmit} noValidate>
+        <FormFieldText
+          control={form.control}
+          name="name"
+          label="Name"
+          placeholder="Ada Voss"
+        />
         <FormFieldText
           control={form.control}
           name="email"
@@ -61,7 +66,10 @@ export function ContactForm() {
           multiline
         />
         {statusMessage ? (
-          <p className="ll-form-status ll-form-status--success" role="status">
+          <p
+            className="rounded-md border bg-muted px-4 py-3 text-sm"
+            role="status"
+          >
             {statusMessage}
           </p>
         ) : null}

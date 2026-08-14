@@ -8,13 +8,16 @@ export default function NotFoundPage() {
       <Head>
         <title>Not found · Luddite Labs</title>
       </Head>
-      <section className="ll-container ll-not-found">
-        <p className="ll-not-found__code">404</p>
-        <h1 className="ll-page-hero__title">This page left the workshop.</h1>
-        <p className="ll-page-hero__lede">
-          The route you requested is not on the shelf. Head back to the main bench.
+      <section className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-center gap-4 px-4 sm:px-6">
+        <p className="text-sm font-medium text-muted-foreground">404</p>
+        <h1 className="text-4xl font-semibold tracking-tight">
+          This page left the workshop.
+        </h1>
+        <p className="max-w-lg text-muted-foreground">
+          The route you requested is not on the shelf. Head back to the main
+          bench.
         </p>
-        <Button asChild variant="accent">
+        <Button asChild>
           <Link to="/">Return home</Link>
         </Button>
       </section>

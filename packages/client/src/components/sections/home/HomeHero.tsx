@@ -6,29 +6,28 @@ import { Button } from '@/components/ui/button'
 
 export function HomeHero() {
   return (
-    <section className="ll-hero ll-grain" aria-label="Introduction">
-      <div className="ll-hero__atmosphere" aria-hidden="true" />
-      <div className="ll-container ll-hero__inner">
+    <section className="relative overflow-hidden border-b bg-muted/30">
+      <div className="mx-auto flex min-h-[calc(100svh-3.5rem)] max-w-6xl flex-col justify-center gap-6 px-4 py-16 sm:px-6">
         <FadeIn>
           <Wordmark hero as="h1" />
         </FadeIn>
-        <FadeIn delay={0.12}>
-          <p className="ll-hero__title">
-            Software shaped in the workshop, not the hype cycle.
+        <FadeIn delay={0.08}>
+          <p className="max-w-2xl text-2xl font-medium tracking-tight sm:text-3xl">
+            Software shaped carefully—clear interfaces, fewer moving parts.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.14}>
+          <p className="max-w-xl text-lg text-muted-foreground">
+            Luddite Labs builds durable products and platforms for teams who
+            value craft over hype.
           </p>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="ll-hero__lede">
-            Luddite Labs builds durable products and platforms with clear
-            interfaces, honest craft, and fewer moving parts than you expect.
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.28}>
           <CallToAction>
-            <Button asChild variant="accent" size="lg">
+            <Button asChild size="lg">
               <Link to="/contact">Start a project</Link>
             </Button>
-            <Button asChild variant="inverse" size="lg">
+            <Button asChild variant="outline" size="lg">
               <Link to="/work">See the work</Link>
             </Button>
           </CallToAction>

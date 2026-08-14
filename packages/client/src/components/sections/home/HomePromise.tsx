@@ -4,8 +4,8 @@ import { Reveal } from '@/components/motion/Reveal'
 
 export function HomePromise() {
   return (
-    <section className="ll-section">
-      <div className="ll-container ll-promise">
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2 md:items-end">
         <Reveal>
           <SectionHeading
             eyebrow="The promise"
