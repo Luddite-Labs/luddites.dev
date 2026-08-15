@@ -40,30 +40,3 @@ jobs:
         env:
           VITE_SITE_URL: https://luddites.dev
           VITE_WEB3FORMS_ACCESS_KEY: ''
-          VITE_CONTACT_ENDPOINT: ''
-          VITE_API_BASE_URL: ''
-
-  docker:
-    name: Docker image
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: false
-          tags: luddites-dev:${{ github.sha }}
-          build-args: |
-            VITE_SITE_URL=https://luddites.dev
-            VITE_WEB3FORMS_ACCESS_KEY=
-            VITE_CONTACT_ENDPOINT=
-            VITE_API_BASE_URL=
-          cache-from: type=gha
-          cache-to: type=gha,mode=max

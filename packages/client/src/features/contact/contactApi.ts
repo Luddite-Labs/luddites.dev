@@ -1,11 +1,6 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { ContactFormValues } from '@/components/form/schemas/contactSchema'
-import {
-  getApiBaseUrl,
-  getContactEndpoint,
-  getWeb3FormsAccessKey,
-  getWeb3FormsEndpoint,
-} from '@/lib/env'
+import { getWeb3FormsAccessKey, getWeb3FormsEndpoint } from '@/lib/env'
 import { SITE } from '@/lib/constants'
 
 type SubmitOk = { ok: true }
@@ -70,15 +65,6 @@ async function postJson(
   }
 }
 
-function toProviderFields(body: ContactFormValues) {
-  return {
-    name: body.name,
-    email: body.email,
-    company: body.company ?? '',
-    message: body.message,
-  }
-}
-
 async function submitViaWeb3Forms(
   accessKey: string,
   body: ContactFormValues,
@@ -87,29 +73,18 @@ async function submitViaWeb3Forms(
     access_key: accessKey,
     subject: `Contact · ${SITE.name}`,
     from_name: SITE.name,
-    ...toProviderFields(body),
+    name: body.name,
+    email: body.email,
+    company: body.company ?? '',
+    message: body.message,
   })
-}
-
-async function submitViaEndpoint(
-  endpoint: string,
-  body: ContactFormValues,
-): Promise<SubmitResult> {
-  return postJson(endpoint, toProviderFields(body))
-}
-
-async function submitViaApi(
-  baseUrl: string,
-  body: ContactFormValues,
-): Promise<SubmitResult> {
-  return postJson(`${baseUrl}/contact`, toProviderFields(body))
 }
 
 async function submitFake(body: ContactFormValues): Promise<SubmitResult> {
   await new Promise((resolve) => setTimeout(resolve, 600))
   if (import.meta.env.DEV) {
     console.info(
-      '[contactApi] fake submit — set VITE_WEB3FORMS_ACCESS_KEY (or VITE_CONTACT_ENDPOINT) to receive email',
+      '[contactApi] fake submit — set VITE_WEB3FORMS_ACCESS_KEY to receive email',
       body,
     )
   }
@@ -126,17 +101,6 @@ export const contactApi = createApi({
         if (web3Key) {
           return submitViaWeb3Forms(web3Key, body)
         }
-
-        const endpoint = getContactEndpoint()
-        if (endpoint) {
-          return submitViaEndpoint(endpoint, body)
-        }
-
-        const apiBase = getApiBaseUrl()
-        if (apiBase) {
-          return submitViaApi(apiBase, body)
-        }
-
         return submitFake(body)
       },
     }),

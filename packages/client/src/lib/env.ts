@@ -32,26 +32,3 @@ export function getWeb3FormsAccessKey() {
 export function getWeb3FormsEndpoint() {
   return WEB3FORMS_ENDPOINT
 }
-
-/**
- * Full contact form POST URL (e.g. Formspree `https://formspree.io/f/xxxx`).
- * Used when Web3Forms is not configured.
- */
-export function getContactEndpoint() {
-  return readEnv(import.meta.env.VITE_CONTACT_ENDPOINT)
-}
-
-/**
- * Custom API origin. POSTs to `${base}/contact`.
- * Used only when Web3Forms and VITE_CONTACT_ENDPOINT are unset.
- */
-export function getApiBaseUrl() {
-  const fromEnv = readEnv(import.meta.env.VITE_API_BASE_URL)
-  return fromEnv ? trimTrailingSlash(fromEnv) : ''
-}
-
-export function hasRealContactSubmit() {
-  return Boolean(
-    getWeb3FormsAccessKey() || getContactEndpoint() || getApiBaseUrl(),
-  )
-}

@@ -30,7 +30,7 @@ VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
 3. In the Web3Forms dashboard, restrict the key to your domain
 4. Restart `pnpm dev` and submit the contact form — you should get an email
 
-The key is public in the client bundle (all `VITE_*` vars are). Domain restriction + Web3Forms spam controls are what protect you. Alternatives: `VITE_CONTACT_ENDPOINT` (e.g. Formspree) or a future `VITE_API_BASE_URL`.
+The key is public in the client bundle (all `VITE_*` vars are). Domain restriction + Web3Forms spam controls are what protect you.
 
 ## Scripts
 
@@ -40,17 +40,3 @@ pnpm build     # SSG build
 pnpm preview   # preview production build
 pnpm lint      # lint the client
 ```
-
-## Docker
-
-```bash
-docker compose up --build
-# or:
-docker build -t luddites-dev \
-  --build-arg VITE_SITE_URL=https://luddites.dev \
-  --build-arg VITE_WEB3FORMS_ACCESS_KEY=your_key \
-  .
-docker run --rm -p 8080:80 luddites-dev
-```
-
-Serves the SSG output with nginx at http://localhost:8080.

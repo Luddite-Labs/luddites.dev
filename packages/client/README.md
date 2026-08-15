@@ -29,10 +29,8 @@ Copy `.env.example` → `.env`:
 |----------|---------|
 | `VITE_SITE_URL` | Canonical origin (OG tags, sitemap, robots) |
 | `VITE_WEB3FORMS_ACCESS_KEY` | Contact form → email via [Web3Forms](https://web3forms.com) (no backend) |
-| `VITE_CONTACT_ENDPOINT` | Alternative: full form POST URL (e.g. Formspree) |
-| `VITE_API_BASE_URL` | Alternative: custom API origin (`POST /contact`) |
 
-Contact submit priority: Web3Forms → contact endpoint → API base → local fake stub.
+Without `VITE_WEB3FORMS_ACCESS_KEY`, the form uses a local fake submit stub.
 
 ## Layout
 
